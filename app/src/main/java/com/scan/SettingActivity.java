@@ -57,7 +57,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void saveUrl() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(SettingActicity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
         builder.setMessage("Are you sure?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -73,7 +73,6 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
                         SharedPreferences urlPreferences = getSharedPreferences(SPF_URL, Context.MODE_PRIVATE);
                         urlPreferences.edit().putString(URL, url).apply();
-                        URLManager.getInInstace().setUrl(url);
                         finish();
                     }
                 })
